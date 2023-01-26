@@ -34,8 +34,13 @@ def table_multiplication():
 
 # Calculez la factorielle d'un nombre
 # Pour rappel, la factorielle de 5 vaux (1*2*3*4*5)
-def factorielle():
-    print("TODO")
+def factorielle(n: int):
+    if n < 0:
+        n = abs(n)
+    if n == 1:
+        return n
+    else:
+        return n*factorielle(n-1)
 
 if __name__ == "__main__":
- display_list(["apple", "banana", "cherry"])
+ print(factorielle(-40))
