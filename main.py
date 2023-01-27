@@ -11,11 +11,13 @@ def display_list(ma_liste: list):
 #En python, les str sont egalement des tableau. des tableau de caractères
 #Avec cette information, afficher chaque lettre d'une phrase donnée en parametre
 def display_word_str(un_mot : str):
-    print("TODO")
+    for i in range(len(un_mot)):
+        print(un_mot[i])
 
 # Completez la fonction afin qu'elle puisse nous afficher les 100 premiers nombres entiers
 def display_hundred_int():
-    print("TODO")
+    for i in range(100):
+        print(i+1)
 
 
 # generez des nombres random, ajoutez les dans un tableau et faites la moyenne des notes.
@@ -79,4 +81,4 @@ def factorielle(n: int):
         return n*factorielle(n-1)
 
 if __name__ == "__main__":
- print(mention_moyenne())
+    display_word_str("cloeustbgivfyruisdniu")
