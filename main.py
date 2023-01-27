@@ -1,4 +1,7 @@
 # On vous donne une list n, parcourez cette liste et affichez ses valeurs
+import re
+
+
 def display_list(ma_liste: list):
     for list_element in ma_liste:
         print(list_element)
@@ -23,7 +26,11 @@ def mention_moyenne():
 # Affichez le nombre de voyelle que comporte un mot saisie par l'utilisateur
 # Vous pouvez varier cet exercice en affichant le nombre de consonne
 def display_number_voyelle():
-    print("TODO")
+    entered_str = input("Please enter something: ")
+    voy_list = ['a', 'e', 'i', 'o', 'u', 'y']
+    nb_voy = len(list(filter(lambda character: character in voy_list, list(entered_str))))
+    nb_letters = len(re.findall(r'[a-zA-Z]', entered_str))
+    return nb_letters - nb_voy
 
 
 # Affichez la table de multiplication (jusque 10 inclus) d'un nombre saisie par l'utilisateur
@@ -52,4 +59,4 @@ def factorielle(n: int):
         return n*factorielle(n-1)
 
 if __name__ == "__main__":
- print(table_multiplication())
+ print(display_number_voyelle())
