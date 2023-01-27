@@ -1,5 +1,6 @@
 # On vous donne une list n, parcourez cette liste et affichez ses valeurs
 import re
+import numpy
 
 
 def display_list(ma_liste: list):
@@ -20,7 +21,26 @@ def display_hundred_int():
 # generez des nombres random, ajoutez les dans un tableau et faites la moyenne des notes.
 # Si la note, est en dessous de 10 (exclu), affichez "Non admin", sinon, "admin"
 def mention_moyenne():
-    print("TODO")
+    marks_list = 20*numpy.random.random_sample(5)
+    marks_sum = 0
+    for mark in marks_list:
+        mark = numpy.round(mark,2)
+        print(mark, " / ")
+        marks_sum += mark
+    average = numpy.round(marks_sum / len(marks_list), 2)
+    print("moyenne : ", average)
+    if average >= 16:
+        return "très bien"
+    elif average >= 14:
+        return "bien"
+    elif average >= 12:
+        return "assez"
+    elif average >= 10:
+        return "obtenu"
+    elif average >= 8:
+        return "rattrapage"
+    else:
+        return "not ok"
 
 
 # Affichez le nombre de voyelle que comporte un mot saisie par l'utilisateur
@@ -59,4 +79,4 @@ def factorielle(n: int):
         return n*factorielle(n-1)
 
 if __name__ == "__main__":
- print(display_number_voyelle())
+ print(mention_moyenne())
